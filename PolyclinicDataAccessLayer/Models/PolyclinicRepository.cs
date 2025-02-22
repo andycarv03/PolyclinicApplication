@@ -117,7 +117,7 @@ namespace PolyclinicDataAccessLayer.Models
             {
                 SqlParameter prmDoctorId = new SqlParameter("@DoctorId", doctorId);
                 SqlParameter prmDateOfApp = new SqlParameter("@DateofAppointment", dateOfApp);
-                prmDateOfApp.SqlDbType = System.Data.SqlDbType.Date;
+                //prmDateOfApp.SqlDbType = System.Data.SqlDbType.Date;
                 
 
                 //resultList = context.AllAppointmentDetails.FromSqlRaw("SELECT * FROM ufn_FetchAllAppointments(@DoctorId, CAST(@DateofAppointment AS DATE))", prmDoctorId, prmDateOfApp).ToList();
@@ -137,10 +137,12 @@ namespace PolyclinicDataAccessLayer.Models
 
         public decimal CalculateDoctorFees(string doctorId, DateTime dateOfApp) 
         {
-            //decimal result;
-            //result = (from s in context.Appointments
-            //          select PolyclinicDbContext.ufn_CalculateDoctorFees(doctorId, dateOfApp)).FirstOrDefault();
-            var result = context.Database.SqlQueryRaw<long>("SELECT dbo.ufn_CalculateDoctorFees(@param1, @param2)", new SqlParameter("@param1", doctorId), new SqlParameter("@param2", dateOfApp)).FirstOrDefault();
+            decimal result;
+            result = (from s in context.Appointments
+                      select PolyclinicDbContext.ufn_CalculateDoctorFees(doctorId, dateOfApp)).FirstOrDefault();
+            //var result = context.Database
+            //    .SqlQueryRaw<decimal>("SELECT dbo.ufn_CalculateDoctorFees(@param1, @param2)", new SqlParameter("@param1", doctorId), new SqlParameter("@param2", dateOfApp))
+            //    .AsEnumerable().FirstOrDefault();
 
             return result;
         }
@@ -152,7 +154,7 @@ namespace PolyclinicDataAccessLayer.Models
             SqlParameter prmPatientId = new SqlParameter("@PatientId", patientId);
             SqlParameter prmDoctorId = new SqlParameter("@DoctorId", doctorId);
             SqlParameter prmDateOfApp = new SqlParameter("@DateOfAppointment", dateOfAp);
-            prmDateOfApp.SqlDbType = System.Data.SqlDbType.Date;
+            //prmDateOfApp.SqlDbType = System.Data.SqlDbType.Date;
 
             SqlParameter resultReturned = new SqlParameter("@Result", System.Data.SqlDbType.Int);
             resultReturned.Direction = System.Data.ParameterDirection.Output;

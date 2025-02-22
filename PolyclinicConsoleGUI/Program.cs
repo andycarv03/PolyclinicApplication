@@ -82,20 +82,20 @@ namespace PolyclinicConsoleGUI
             //}
 
             //CalculateDoctorFees
-            var fees = repository.CalculateDoctorFees("D4", new DateTime(2025, 2, 27)); //new DateOnly(2025, 2, 27)
-            if (fees != 0)
-            {
-                Console.WriteLine("Fees for Doctor - {0}", fees);
-            }
-            else
-            {
-                Console.WriteLine("No appointments scheduled for the given doctor id");
-            }
+            //var fees = repository.CalculateDoctorFees("D4", new DateTime(2025, 2, 27)); //new DateOnly(2025, 2, 27)
+            //if (fees != 0)
+            //{
+            //    Console.WriteLine("Fees for Doctor - {0}", fees);
+            //}
+            //else
+            //{
+            //    Console.WriteLine("No appointments scheduled for the given doctor id");
+            //}
 
             //GetDoctorAppointment
             //int appointment;
             //int result = repository.GetDoctorAppointment("P101", "D1", new DateTime(2025, 3, 27), out appointment);
-            //if(result > 0 ) 
+            //if (result > 0)
             //{
             //    Console.WriteLine("New appointment generated " + appointment);
             //}

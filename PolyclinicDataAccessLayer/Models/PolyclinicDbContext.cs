@@ -111,7 +111,7 @@ public partial class PolyclinicDbContext : DbContext
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 
     [DbFunction("ufn_CalculateDoctorFees", "dbo")]
-    public static int ufn_CalculateDoctorFees(string doctorId, DateTime dateOfApp)
+    public static decimal ufn_CalculateDoctorFees(string doctorId, DateTime dateOfApp)
     {
         return 0;
     }
