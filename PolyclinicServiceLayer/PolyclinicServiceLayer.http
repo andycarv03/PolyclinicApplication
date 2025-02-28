@@ -1,0 +1,6 @@
+@PolyclinicServiceLayer_HostAddress = https://localhost:44359/api/
+
+GET {{PolyclinicServiceLayer_HostAddress}}/Admin/
+Accept: application/json
+
+###

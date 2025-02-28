@@ -17,9 +17,22 @@ namespace PolyclinicConsoleGUI
         {
             Console.WriteLine("Hello, World!\n\n");
 
+            //GetAllPatientDetails
+            //List<Patient> patients = repository.GetAllPatientDetails();
+            //if(patients != null)
+            //{
+            //    foreach(Patient patient in patients) 
+            //    {
+            //        Console.WriteLine("{0}\t{1}\t{2}\t{3}\t{4}", patient.PatientId, patient.PatientName, patient.Gender, patient.Age, patient.ContactNumber);
+            //    }
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Failed");
+            //}
             //GetPatientDetails
             //Patient patient = repository.GetPatientDetails("P101");
-            //if (patient != null) 
+            //if (patient != null)
             //{
             //    Console.WriteLine("{0}\t{1}\t{2}\t{3}\t{4}", patient.PatientId, patient.PatientName, patient.Gender, patient.Age, patient.ContactNumber);
             //}

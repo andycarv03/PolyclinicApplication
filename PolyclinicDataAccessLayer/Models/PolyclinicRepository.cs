@@ -17,6 +17,25 @@ namespace PolyclinicDataAccessLayer.Models
             this.context = context;
         }
 
+        //not understood
+        //public PolyclinicRepository()
+        //{
+        //    context = new PolyclinicDbContext();
+        //}
+        //Fetch all the patient details 
+        public List<Patient> GetAllPatientDetails()
+        {
+            List<Patient> patientList;
+            try
+            {
+                patientList = context.Patients.ToList();
+            }
+            catch(Exception ex) 
+            {
+                patientList = new List<Patient>();
+            }
+            return patientList;
+        }
         //Fetch the Patient’s details for a given PatientID from the Patients table using LINQ query.
         public Patient GetPatientDetails(string patientId)
         {
